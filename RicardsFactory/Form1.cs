@@ -536,19 +536,5 @@ namespace RicardsFactory
 
             RefreshView();
         }
-
-        // Add data
-
-        // Remove data
-
-        // Edit data
-
-        // Search data (text input field)
-
-        // Get records count
-
-        // Delete all data
-
-        // Populate with test data
     }
 }
