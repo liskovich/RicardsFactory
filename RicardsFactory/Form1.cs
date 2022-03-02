@@ -13,8 +13,14 @@ namespace RicardsFactory
 {
     public partial class Form1 : Form
     {
+        // replace with correct local db path
         private const string _pathToDatabase = @"C:\Users\user\Desktop\Export\kd_liskovskis_db\RicardsFactory\RicardsFactory\Factory.mdf";
         private readonly string _connectionString = $@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename={_pathToDatabase};Integrated Security=True";
+
+        DataSet DeptsDataSet;
+        DataSet ConvsDataSet;
+        DataSet DevcsDataSet;
+
 
         public Form1()
         {
@@ -30,8 +36,6 @@ namespace RicardsFactory
 
         private void CreateDatabase()
         {
-            // test if database already exists
-
             SqlConnection connection = new SqlConnection(_connectionString);
 
             const string createDepartmentsTable = "create table Departments(" +
@@ -86,8 +90,7 @@ namespace RicardsFactory
                 MessageBox.Show(ex.Message);
             }
 
-            // TODO: refactor
-            LoadDatabase();
+            RefreshView();
         }
 
         private bool LoadDatabase()
@@ -102,16 +105,16 @@ namespace RicardsFactory
             SqlDataAdapter convsAdapter = new SqlDataAdapter(getConvs, connection);
             SqlDataAdapter devcsAdapter = new SqlDataAdapter(getDevcs, connection);
 
-            DataSet deptsDataSet = new DataSet();
-            DataSet convsDataSet = new DataSet();
-            DataSet devcsDataSet = new DataSet();
+            DeptsDataSet = new DataSet();
+            ConvsDataSet = new DataSet();
+            DevcsDataSet = new DataSet();
 
             try
             {
                 connection.Open();
-                deptsAdapter.Fill(deptsDataSet);
-                convsAdapter.Fill(convsDataSet);
-                devcsAdapter.Fill(devcsDataSet);
+                deptsAdapter.Fill(DeptsDataSet);
+                convsAdapter.Fill(ConvsDataSet);
+                devcsAdapter.Fill(DevcsDataSet);
                 connection.Close();
             }
             catch
@@ -123,13 +126,13 @@ namespace RicardsFactory
             BindingSource convsBindSource = new BindingSource();
             BindingSource devcsBindSource = new BindingSource();
 
-            deptsBindSource.DataSource = deptsDataSet.Tables[0].DefaultView;
-            convsBindSource.DataSource = convsDataSet.Tables[0].DefaultView;
-            devcsBindSource.DataSource = devcsDataSet.Tables[0].DefaultView;
+            deptsBindSource.DataSource = DeptsDataSet.Tables[0].DefaultView;
+            convsBindSource.DataSource = ConvsDataSet.Tables[0].DefaultView;
+            devcsBindSource.DataSource = DevcsDataSet.Tables[0].DefaultView;
 
-            var deptsCount = deptsDataSet.Tables[0].DefaultView.Count;
-            var convsCount = convsDataSet.Tables[0].DefaultView.Count;
-            var devcsCount = devcsDataSet.Tables[0].DefaultView.Count;
+            var deptsCount = DeptsDataSet.Tables[0].DefaultView.Count;
+            var convsCount = ConvsDataSet.Tables[0].DefaultView.Count;
+            var devcsCount = DevcsDataSet.Tables[0].DefaultView.Count;
 
             DeptBindingNavigator.BindingSource = deptsBindSource;
             ConvBindingNavigator.BindingSource = convsBindSource;
@@ -321,19 +324,14 @@ namespace RicardsFactory
                 MessageBox.Show(ex.Message);
             }
 
-            DeptBindingNavigator.BindingSource = null;
-            ConvBindingNavigator.BindingSource = null;
-            DevcBindingNavigator.BindingSource = null;
-            
-            DeptDataGridView.DataSource = null;
-            ConvDataGridView.DataSource = null;
-            DevcDataGridView.DataSource = null;
+            var result = LoadDatabase();
 
-            DeptCount.Text = "0 records";
-            ConvCount.Text = "0 records";
-            DevcCount.Text = "0 records";
+            if (!result)
+            {
+                CreateDatabase();
+            }
 
-            // LoadDatabase();
+            RefreshView();
         }
 
         private void PopulateBtn_Click(object sender, EventArgs e)
@@ -394,9 +392,151 @@ namespace RicardsFactory
                 MessageBox.Show(ex.Message);
             }
 
+            RefreshView();
+        }
+
+        private void RefreshView()
+        {
+            DeptBindingNavigator.BindingSource = null;
+            ConvBindingNavigator.BindingSource = null;
+            DevcBindingNavigator.BindingSource = null;
+
+            DeptDataGridView.DataSource = null;
+            ConvDataGridView.DataSource = null;
+            DevcDataGridView.DataSource = null;
+
+            DeptCount.Text = "0 records";
+            ConvCount.Text = "0 records";
+            DevcCount.Text = "0 records";
+
             LoadDatabase();
-        }        
-            
+        }
+
+        private void RefreshBtn_Click(object sender, EventArgs e)
+        {
+            RefreshView();
+        }
+
+        private void DeleteDeptBtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(_connectionString);
+            SqlCommand command = new SqlCommand();
+
+            try
+            {
+                var idInput = int.Parse(ChangeIDText.Text);
+
+                string deleteDepartment = $"DELETE FROM Departments WHERE Departments.ID_Dept = {idInput}";
+
+                connection.Open();
+                command.Connection = connection;
+
+                command.CommandText = deleteDepartment;
+                command.ExecuteNonQuery();
+
+                connection.Close();
+
+                ChangeIDText.Text = string.Empty;
+                ChangeNameText.Text = string.Empty;
+                ChangeLocationText.Text = string.Empty;
+                ChangeEmployeeText.Text = string.Empty;
+                ChangeUPMText.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to delete data: {ex.Message}");
+            }
+
+            RefreshView();
+        }
+
+        private void ChangeDeptBtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(_connectionString);
+            SqlCommand command = new SqlCommand();
+
+            try
+            {
+                var idInput = int.Parse(ChangeIDText.Text);
+                var nameInput = ChangeNameText.Text;
+                var locationText = ChangeLocationText.Text;
+                var employeeText = int.Parse(ChangeEmployeeText.Text);
+                var upmText = int.Parse(ChangeUPMText.Text);
+
+                if (idInput == 0 || nameInput == null || locationText == null
+                    || employeeText == 0 || upmText == 0)
+                {
+                    MessageBox.Show("There are errors in input fields");
+                }
+
+                string updateDepartment = $"UPDATE Departments SET Dept_Name = '{nameInput}', " +
+                $"Dept_Location = '{locationText}', Dept_EmployeeCount = {employeeText}, " +
+                $"Dept_UnitsProducedMonthly = {upmText} WHERE Departments.ID_Dept = {idInput}";
+
+                connection.Open();
+                command.Connection = connection;
+
+                command.CommandText = updateDepartment;
+                command.ExecuteNonQuery();
+
+                connection.Close();
+
+                ChangeIDText.Text = string.Empty;
+                ChangeNameText.Text = string.Empty;
+                ChangeLocationText.Text = string.Empty;
+                ChangeEmployeeText.Text = string.Empty;
+                ChangeUPMText.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to modify data: {ex.Message}");
+            }
+
+            RefreshView();
+        }
+
+        private void DeptSaveBtn_Click(object sender, EventArgs e)
+        {
+            SqlConnection connection = new SqlConnection(_connectionString);
+            SqlCommand command = new SqlCommand();
+
+            try
+            {
+                var nameInput = SaveNameText.Text;
+                var locationText = SaveLocationText.Text;
+                var employeeText = int.Parse(SaveEmployeeText.Text);
+                var upmText = int.Parse(SaveUPMText.Text);
+
+                if (nameInput == null || locationText == null
+                    || employeeText == 0 || upmText == 0)
+                {
+                    MessageBox.Show("There are errors in input fields");
+                }
+
+                string insertDepartment = $"insert into Departments (Dept_Name, Dept_Location, Dept_EmployeeCount, Dept_UnitsProducedMonthly)" +
+                $" VALUES ('{nameInput}', '{locationText}', {employeeText}, {upmText});";
+
+                connection.Open();
+                command.Connection = connection;
+
+                command.CommandText = insertDepartment;
+                command.ExecuteNonQuery();
+
+                connection.Close();
+               
+                SaveNameText.Text = string.Empty;
+                SaveLocationText.Text = string.Empty;
+                SaveEmployeeText.Text = string.Empty;
+                SaveUPMText.Text = string.Empty;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Failed to save data: {ex.Message}");
+            }
+
+            RefreshView();
+        }
+
         // Add data
 
         // Remove data

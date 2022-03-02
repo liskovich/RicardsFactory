@@ -32,9 +32,7 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.DeptDataGridView = new System.Windows.Forms.DataGridView();
             this.DeptBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
-            this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator = new System.Windows.Forms.ToolStripSeparator();
@@ -44,9 +42,7 @@
             this.bindingNavigatorMoveLastItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.ConvBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel1 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
@@ -57,9 +53,7 @@
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
             this.ConvDataGridView = new System.Windows.Forms.DataGridView();
             this.DevcBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
             this.toolStripLabel2 = new System.Windows.Forms.ToolStripLabel();
-            this.toolStripButton8 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton9 = new System.Windows.Forms.ToolStripButton();
             this.toolStripButton10 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator4 = new System.Windows.Forms.ToolStripSeparator();
@@ -86,6 +80,29 @@
             this.DeptSearchBtn = new System.Windows.Forms.Button();
             this.ConvSearchBtn = new System.Windows.Forms.Button();
             this.DevcSearchBtn = new System.Windows.Forms.Button();
+            this.RefreshBtn = new System.Windows.Forms.Button();
+            this.ChangeIDText = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.ChangeNameText = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ChangeLocationText = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.ChangeEmployeeText = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.ChangeUPMText = new System.Windows.Forms.TextBox();
+            this.ChangeDeptBtn = new System.Windows.Forms.Button();
+            this.DeleteDeptBtn = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
+            this.SaveUPMText = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.SaveEmployeeText = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.SaveLocationText = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.SaveNameText = new System.Windows.Forms.TextBox();
+            this.DeptSaveBtn = new System.Windows.Forms.Button();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
             ((System.ComponentModel.ISupportInitialize)(this.DeptDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DeptBindingNavigator)).BeginInit();
             this.DeptBindingNavigator.SuspendLayout();
@@ -95,6 +112,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.DevcBindingNavigator)).BeginInit();
             this.DevcBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DevcDataGridView)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // DeptDataGridView
@@ -107,9 +125,9 @@
             // 
             // DeptBindingNavigator
             // 
-            this.DeptBindingNavigator.AddNewItem = this.bindingNavigatorAddNewItem;
+            this.DeptBindingNavigator.AddNewItem = null;
             this.DeptBindingNavigator.CountItem = this.bindingNavigatorCountItem;
-            this.DeptBindingNavigator.DeleteItem = this.bindingNavigatorDeleteItem;
+            this.DeptBindingNavigator.DeleteItem = null;
             this.DeptBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.DeptBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.bindingNavigatorMoveFirstItem,
@@ -120,9 +138,7 @@
             this.bindingNavigatorSeparator1,
             this.bindingNavigatorMoveNextItem,
             this.bindingNavigatorMoveLastItem,
-            this.bindingNavigatorSeparator2,
-            this.bindingNavigatorAddNewItem,
-            this.bindingNavigatorDeleteItem});
+            this.bindingNavigatorSeparator2});
             this.DeptBindingNavigator.Location = new System.Drawing.Point(12, 9);
             this.DeptBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.DeptBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
@@ -130,18 +146,9 @@
             this.DeptBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.DeptBindingNavigator.Name = "DeptBindingNavigator";
             this.DeptBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.DeptBindingNavigator.Size = new System.Drawing.Size(255, 25);
+            this.DeptBindingNavigator.Size = new System.Drawing.Size(209, 25);
             this.DeptBindingNavigator.TabIndex = 1;
             this.DeptBindingNavigator.Text = "bindingNavigator1";
-            // 
-            // bindingNavigatorAddNewItem
-            // 
-            this.bindingNavigatorAddNewItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorAddNewItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorAddNewItem.Image")));
-            this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
-            this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorAddNewItem.Text = "Add new";
             // 
             // bindingNavigatorCountItem
             // 
@@ -149,15 +156,6 @@
             this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "of {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Total number of items";
-            // 
-            // bindingNavigatorDeleteItem
-            // 
-            this.bindingNavigatorDeleteItem.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.bindingNavigatorDeleteItem.Image = ((System.Drawing.Image)(resources.GetObject("bindingNavigatorDeleteItem.Image")));
-            this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
-            this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 22);
-            this.bindingNavigatorDeleteItem.Text = "Delete";
             // 
             // bindingNavigatorMoveFirstItem
             // 
@@ -221,9 +219,9 @@
             // 
             // ConvBindingNavigator
             // 
-            this.ConvBindingNavigator.AddNewItem = this.toolStripButton1;
+            this.ConvBindingNavigator.AddNewItem = null;
             this.ConvBindingNavigator.CountItem = this.toolStripLabel1;
-            this.ConvBindingNavigator.DeleteItem = this.toolStripButton2;
+            this.ConvBindingNavigator.DeleteItem = null;
             this.ConvBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.ConvBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton3,
@@ -234,9 +232,7 @@
             this.toolStripSeparator2,
             this.toolStripButton5,
             this.toolStripButton6,
-            this.toolStripSeparator3,
-            this.toolStripButton1,
-            this.toolStripButton2});
+            this.toolStripSeparator3});
             this.ConvBindingNavigator.Location = new System.Drawing.Point(12, 257);
             this.ConvBindingNavigator.MoveFirstItem = this.toolStripButton3;
             this.ConvBindingNavigator.MoveLastItem = this.toolStripButton6;
@@ -244,18 +240,9 @@
             this.ConvBindingNavigator.MovePreviousItem = this.toolStripButton4;
             this.ConvBindingNavigator.Name = "ConvBindingNavigator";
             this.ConvBindingNavigator.PositionItem = this.toolStripTextBox1;
-            this.ConvBindingNavigator.Size = new System.Drawing.Size(255, 25);
+            this.ConvBindingNavigator.Size = new System.Drawing.Size(209, 25);
             this.ConvBindingNavigator.TabIndex = 3;
             this.ConvBindingNavigator.Text = "bindingNavigator2";
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton1.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton1.Text = "Add new";
             // 
             // toolStripLabel1
             // 
@@ -263,15 +250,6 @@
             this.toolStripLabel1.Size = new System.Drawing.Size(35, 22);
             this.toolStripLabel1.Text = "of {0}";
             this.toolStripLabel1.ToolTipText = "Total number of items";
-            // 
-            // toolStripButton2
-            // 
-            this.toolStripButton2.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton2.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton2.Text = "Delete";
             // 
             // toolStripButton3
             // 
@@ -343,9 +321,9 @@
             // 
             // DevcBindingNavigator
             // 
-            this.DevcBindingNavigator.AddNewItem = this.toolStripButton7;
+            this.DevcBindingNavigator.AddNewItem = null;
             this.DevcBindingNavigator.CountItem = this.toolStripLabel2;
-            this.DevcBindingNavigator.DeleteItem = this.toolStripButton8;
+            this.DevcBindingNavigator.DeleteItem = null;
             this.DevcBindingNavigator.Dock = System.Windows.Forms.DockStyle.None;
             this.DevcBindingNavigator.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripButton9,
@@ -356,9 +334,7 @@
             this.toolStripSeparator5,
             this.toolStripButton11,
             this.toolStripButton12,
-            this.toolStripSeparator6,
-            this.toolStripButton7,
-            this.toolStripButton8});
+            this.toolStripSeparator6});
             this.DevcBindingNavigator.Location = new System.Drawing.Point(12, 505);
             this.DevcBindingNavigator.MoveFirstItem = this.toolStripButton9;
             this.DevcBindingNavigator.MoveLastItem = this.toolStripButton12;
@@ -366,18 +342,9 @@
             this.DevcBindingNavigator.MovePreviousItem = this.toolStripButton10;
             this.DevcBindingNavigator.Name = "DevcBindingNavigator";
             this.DevcBindingNavigator.PositionItem = this.toolStripTextBox2;
-            this.DevcBindingNavigator.Size = new System.Drawing.Size(255, 25);
+            this.DevcBindingNavigator.Size = new System.Drawing.Size(209, 25);
             this.DevcBindingNavigator.TabIndex = 4;
             this.DevcBindingNavigator.Text = "bindingNavigator3";
-            // 
-            // toolStripButton7
-            // 
-            this.toolStripButton7.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton7.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton7.Text = "Add new";
             // 
             // toolStripLabel2
             // 
@@ -385,15 +352,6 @@
             this.toolStripLabel2.Size = new System.Drawing.Size(35, 22);
             this.toolStripLabel2.Text = "of {0}";
             this.toolStripLabel2.ToolTipText = "Total number of items";
-            // 
-            // toolStripButton8
-            // 
-            this.toolStripButton8.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton8.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton8.Image")));
-            this.toolStripButton8.Name = "toolStripButton8";
-            this.toolStripButton8.RightToLeftAutoMirrorImage = true;
-            this.toolStripButton8.Size = new System.Drawing.Size(23, 22);
-            this.toolStripButton8.Text = "Delete";
             // 
             // toolStripButton9
             // 
@@ -466,7 +424,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(295, 9);
+            this.label1.Location = new System.Drawing.Point(593, 13);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(67, 13);
             this.label1.TabIndex = 6;
@@ -475,7 +433,7 @@
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(295, 257);
+            this.label2.Location = new System.Drawing.Point(593, 257);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(57, 13);
             this.label2.TabIndex = 7;
@@ -484,7 +442,7 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(295, 505);
+            this.label3.Location = new System.Drawing.Point(593, 505);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(46, 13);
             this.label3.TabIndex = 8;
@@ -492,7 +450,7 @@
             // 
             // DeptSearch
             // 
-            this.DeptSearch.Location = new System.Drawing.Point(654, 9);
+            this.DeptSearch.Location = new System.Drawing.Point(941, 11);
             this.DeptSearch.Name = "DeptSearch";
             this.DeptSearch.Size = new System.Drawing.Size(100, 20);
             this.DeptSearch.TabIndex = 9;
@@ -500,7 +458,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(518, 9);
+            this.label4.Location = new System.Drawing.Point(805, 11);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(130, 13);
             this.label4.TabIndex = 10;
@@ -509,7 +467,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(518, 259);
+            this.label5.Location = new System.Drawing.Point(814, 257);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(121, 13);
             this.label5.TabIndex = 12;
@@ -517,7 +475,7 @@
             // 
             // ConvSearch
             // 
-            this.ConvSearch.Location = new System.Drawing.Point(654, 259);
+            this.ConvSearch.Location = new System.Drawing.Point(941, 257);
             this.ConvSearch.Name = "ConvSearch";
             this.ConvSearch.Size = new System.Drawing.Size(100, 20);
             this.ConvSearch.TabIndex = 11;
@@ -525,7 +483,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(518, 508);
+            this.label6.Location = new System.Drawing.Point(826, 505);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(109, 13);
             this.label6.TabIndex = 14;
@@ -533,7 +491,7 @@
             // 
             // DevcSearch
             // 
-            this.DevcSearch.Location = new System.Drawing.Point(654, 508);
+            this.DevcSearch.Location = new System.Drawing.Point(941, 505);
             this.DevcSearch.Name = "DevcSearch";
             this.DevcSearch.Size = new System.Drawing.Size(100, 20);
             this.DevcSearch.TabIndex = 13;
@@ -561,7 +519,7 @@
             // DeptCount
             // 
             this.DeptCount.AutoSize = true;
-            this.DeptCount.Location = new System.Drawing.Point(369, 9);
+            this.DeptCount.Location = new System.Drawing.Point(667, 13);
             this.DeptCount.Name = "DeptCount";
             this.DeptCount.Size = new System.Drawing.Size(46, 13);
             this.DeptCount.TabIndex = 17;
@@ -570,7 +528,7 @@
             // ConvCount
             // 
             this.ConvCount.AutoSize = true;
-            this.ConvCount.Location = new System.Drawing.Point(369, 257);
+            this.ConvCount.Location = new System.Drawing.Point(667, 257);
             this.ConvCount.Name = "ConvCount";
             this.ConvCount.Size = new System.Drawing.Size(46, 13);
             this.ConvCount.TabIndex = 18;
@@ -579,7 +537,7 @@
             // DevcCount
             // 
             this.DevcCount.AutoSize = true;
-            this.DevcCount.Location = new System.Drawing.Point(369, 505);
+            this.DevcCount.Location = new System.Drawing.Point(667, 505);
             this.DevcCount.Name = "DevcCount";
             this.DevcCount.Size = new System.Drawing.Size(46, 13);
             this.DevcCount.TabIndex = 19;
@@ -587,7 +545,7 @@
             // 
             // DeptSearchBtn
             // 
-            this.DeptSearchBtn.Location = new System.Drawing.Point(760, 6);
+            this.DeptSearchBtn.Location = new System.Drawing.Point(1047, 8);
             this.DeptSearchBtn.Name = "DeptSearchBtn";
             this.DeptSearchBtn.Size = new System.Drawing.Size(75, 23);
             this.DeptSearchBtn.TabIndex = 20;
@@ -597,7 +555,7 @@
             // 
             // ConvSearchBtn
             // 
-            this.ConvSearchBtn.Location = new System.Drawing.Point(760, 257);
+            this.ConvSearchBtn.Location = new System.Drawing.Point(1047, 255);
             this.ConvSearchBtn.Name = "ConvSearchBtn";
             this.ConvSearchBtn.Size = new System.Drawing.Size(75, 23);
             this.ConvSearchBtn.TabIndex = 21;
@@ -607,7 +565,7 @@
             // 
             // DevcSearchBtn
             // 
-            this.DevcSearchBtn.Location = new System.Drawing.Point(760, 506);
+            this.DevcSearchBtn.Location = new System.Drawing.Point(1047, 503);
             this.DevcSearchBtn.Name = "DevcSearchBtn";
             this.DevcSearchBtn.Size = new System.Drawing.Size(75, 23);
             this.DevcSearchBtn.TabIndex = 22;
@@ -615,11 +573,227 @@
             this.DevcSearchBtn.UseVisualStyleBackColor = true;
             this.DevcSearchBtn.Click += new System.EventHandler(this.DevcSearchBtn_Click);
             // 
+            // RefreshBtn
+            // 
+            this.RefreshBtn.Location = new System.Drawing.Point(1058, 781);
+            this.RefreshBtn.Name = "RefreshBtn";
+            this.RefreshBtn.Size = new System.Drawing.Size(75, 23);
+            this.RefreshBtn.TabIndex = 23;
+            this.RefreshBtn.Text = "Refresh";
+            this.RefreshBtn.UseVisualStyleBackColor = true;
+            this.RefreshBtn.Click += new System.EventHandler(this.RefreshBtn_Click);
+            // 
+            // ChangeIDText
+            // 
+            this.ChangeIDText.Location = new System.Drawing.Point(115, 19);
+            this.ChangeIDText.Name = "ChangeIDText";
+            this.ChangeIDText.Size = new System.Drawing.Size(146, 20);
+            this.ChangeIDText.TabIndex = 24;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(91, 22);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(18, 13);
+            this.label7.TabIndex = 25;
+            this.label7.Text = "ID";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(74, 48);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 27;
+            this.label8.Text = "Name";
+            // 
+            // ChangeNameText
+            // 
+            this.ChangeNameText.Location = new System.Drawing.Point(115, 45);
+            this.ChangeNameText.Name = "ChangeNameText";
+            this.ChangeNameText.Size = new System.Drawing.Size(146, 20);
+            this.ChangeNameText.TabIndex = 26;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(61, 74);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(48, 13);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Location";
+            // 
+            // ChangeLocationText
+            // 
+            this.ChangeLocationText.Location = new System.Drawing.Point(115, 71);
+            this.ChangeLocationText.Name = "ChangeLocationText";
+            this.ChangeLocationText.Size = new System.Drawing.Size(146, 20);
+            this.ChangeLocationText.TabIndex = 28;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(51, 100);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(58, 13);
+            this.label10.TabIndex = 31;
+            this.label10.Text = "Employees";
+            // 
+            // ChangeEmployeeText
+            // 
+            this.ChangeEmployeeText.Location = new System.Drawing.Point(115, 97);
+            this.ChangeEmployeeText.Name = "ChangeEmployeeText";
+            this.ChangeEmployeeText.Size = new System.Drawing.Size(146, 20);
+            this.ChangeEmployeeText.TabIndex = 30;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(29, 126);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(80, 13);
+            this.label11.TabIndex = 33;
+            this.label11.Text = "Units Produced";
+            // 
+            // ChangeUPMText
+            // 
+            this.ChangeUPMText.Location = new System.Drawing.Point(115, 123);
+            this.ChangeUPMText.Name = "ChangeUPMText";
+            this.ChangeUPMText.Size = new System.Drawing.Size(146, 20);
+            this.ChangeUPMText.TabIndex = 32;
+            // 
+            // ChangeDeptBtn
+            // 
+            this.ChangeDeptBtn.Location = new System.Drawing.Point(186, 149);
+            this.ChangeDeptBtn.Name = "ChangeDeptBtn";
+            this.ChangeDeptBtn.Size = new System.Drawing.Size(75, 23);
+            this.ChangeDeptBtn.TabIndex = 34;
+            this.ChangeDeptBtn.Text = "Edit";
+            this.ChangeDeptBtn.UseVisualStyleBackColor = true;
+            this.ChangeDeptBtn.Click += new System.EventHandler(this.ChangeDeptBtn_Click);
+            // 
+            // DeleteDeptBtn
+            // 
+            this.DeleteDeptBtn.Location = new System.Drawing.Point(105, 149);
+            this.DeleteDeptBtn.Name = "DeleteDeptBtn";
+            this.DeleteDeptBtn.Size = new System.Drawing.Size(75, 23);
+            this.DeleteDeptBtn.TabIndex = 35;
+            this.DeleteDeptBtn.Text = "Delete";
+            this.DeleteDeptBtn.UseVisualStyleBackColor = true;
+            this.DeleteDeptBtn.Click += new System.EventHandler(this.DeleteDeptBtn_Click);
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(29, 274);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(80, 13);
+            this.label12.TabIndex = 43;
+            this.label12.Text = "Units Produced";
+            // 
+            // SaveUPMText
+            // 
+            this.SaveUPMText.Location = new System.Drawing.Point(115, 271);
+            this.SaveUPMText.Name = "SaveUPMText";
+            this.SaveUPMText.Size = new System.Drawing.Size(146, 20);
+            this.SaveUPMText.TabIndex = 42;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(51, 248);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(58, 13);
+            this.label13.TabIndex = 41;
+            this.label13.Text = "Employees";
+            // 
+            // SaveEmployeeText
+            // 
+            this.SaveEmployeeText.Location = new System.Drawing.Point(115, 245);
+            this.SaveEmployeeText.Name = "SaveEmployeeText";
+            this.SaveEmployeeText.Size = new System.Drawing.Size(146, 20);
+            this.SaveEmployeeText.TabIndex = 40;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(61, 222);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(48, 13);
+            this.label14.TabIndex = 39;
+            this.label14.Text = "Location";
+            // 
+            // SaveLocationText
+            // 
+            this.SaveLocationText.Location = new System.Drawing.Point(115, 219);
+            this.SaveLocationText.Name = "SaveLocationText";
+            this.SaveLocationText.Size = new System.Drawing.Size(146, 20);
+            this.SaveLocationText.TabIndex = 38;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(74, 196);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(35, 13);
+            this.label15.TabIndex = 37;
+            this.label15.Text = "Name";
+            // 
+            // SaveNameText
+            // 
+            this.SaveNameText.Location = new System.Drawing.Point(115, 193);
+            this.SaveNameText.Name = "SaveNameText";
+            this.SaveNameText.Size = new System.Drawing.Size(146, 20);
+            this.SaveNameText.TabIndex = 36;
+            // 
+            // DeptSaveBtn
+            // 
+            this.DeptSaveBtn.Location = new System.Drawing.Point(186, 297);
+            this.DeptSaveBtn.Name = "DeptSaveBtn";
+            this.DeptSaveBtn.Size = new System.Drawing.Size(75, 23);
+            this.DeptSaveBtn.TabIndex = 44;
+            this.DeptSaveBtn.Text = "Save";
+            this.DeptSaveBtn.UseVisualStyleBackColor = true;
+            this.DeptSaveBtn.Click += new System.EventHandler(this.DeptSaveBtn_Click);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.ChangeLocationText);
+            this.groupBox1.Controls.Add(this.DeptSaveBtn);
+            this.groupBox1.Controls.Add(this.ChangeIDText);
+            this.groupBox1.Controls.Add(this.label12);
+            this.groupBox1.Controls.Add(this.label7);
+            this.groupBox1.Controls.Add(this.SaveUPMText);
+            this.groupBox1.Controls.Add(this.ChangeNameText);
+            this.groupBox1.Controls.Add(this.label13);
+            this.groupBox1.Controls.Add(this.label8);
+            this.groupBox1.Controls.Add(this.SaveEmployeeText);
+            this.groupBox1.Controls.Add(this.label9);
+            this.groupBox1.Controls.Add(this.label14);
+            this.groupBox1.Controls.Add(this.ChangeEmployeeText);
+            this.groupBox1.Controls.Add(this.SaveLocationText);
+            this.groupBox1.Controls.Add(this.label10);
+            this.groupBox1.Controls.Add(this.label15);
+            this.groupBox1.Controls.Add(this.ChangeUPMText);
+            this.groupBox1.Controls.Add(this.SaveNameText);
+            this.groupBox1.Controls.Add(this.label11);
+            this.groupBox1.Controls.Add(this.DeleteDeptBtn);
+            this.groupBox1.Controls.Add(this.ChangeDeptBtn);
+            this.groupBox1.Location = new System.Drawing.Point(1139, 9);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(267, 334);
+            this.groupBox1.TabIndex = 45;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Departments";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1145, 816);
+            this.ClientSize = new System.Drawing.Size(1418, 816);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.RefreshBtn);
             this.Controls.Add(this.DevcSearchBtn);
             this.Controls.Add(this.ConvSearchBtn);
             this.Controls.Add(this.DeptSearchBtn);
@@ -657,6 +831,8 @@
             this.DevcBindingNavigator.ResumeLayout(false);
             this.DevcBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.DevcDataGridView)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -666,9 +842,7 @@
 
         private System.Windows.Forms.DataGridView DeptDataGridView;
         private System.Windows.Forms.BindingNavigator DeptBindingNavigator;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorAddNewItem;
         private System.Windows.Forms.ToolStripLabel bindingNavigatorCountItem;
-        private System.Windows.Forms.ToolStripButton bindingNavigatorDeleteItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveFirstItem;
         private System.Windows.Forms.ToolStripButton bindingNavigatorMovePreviousItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator;
@@ -678,9 +852,7 @@
         private System.Windows.Forms.ToolStripButton bindingNavigatorMoveLastItem;
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.BindingNavigator ConvBindingNavigator;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
         private System.Windows.Forms.ToolStripLabel toolStripLabel1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
         private System.Windows.Forms.ToolStripButton toolStripButton3;
         private System.Windows.Forms.ToolStripButton toolStripButton4;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator1;
@@ -691,9 +863,7 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.DataGridView ConvDataGridView;
         private System.Windows.Forms.BindingNavigator DevcBindingNavigator;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
         private System.Windows.Forms.ToolStripLabel toolStripLabel2;
-        private System.Windows.Forms.ToolStripButton toolStripButton8;
         private System.Windows.Forms.ToolStripButton toolStripButton9;
         private System.Windows.Forms.ToolStripButton toolStripButton10;
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator4;
@@ -720,6 +890,29 @@
         private System.Windows.Forms.Button DeptSearchBtn;
         private System.Windows.Forms.Button ConvSearchBtn;
         private System.Windows.Forms.Button DevcSearchBtn;
+        private System.Windows.Forms.Button RefreshBtn;
+        private System.Windows.Forms.TextBox ChangeIDText;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox ChangeNameText;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox ChangeLocationText;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox ChangeEmployeeText;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox ChangeUPMText;
+        private System.Windows.Forms.Button ChangeDeptBtn;
+        private System.Windows.Forms.Button DeleteDeptBtn;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox SaveUPMText;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox SaveEmployeeText;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox SaveLocationText;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox SaveNameText;
+        private System.Windows.Forms.Button DeptSaveBtn;
+        private System.Windows.Forms.GroupBox groupBox1;
     }
 }
 
